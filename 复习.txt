@@ -1,0 +1,120 @@
+版本控制系统
+1，本地版本控制系统   代表游戏时候存档读档
+2，集中式版本控制系统  代表svn cvs
+3，分布式版本控制系统  git
+
+集中式版本控制系统和分布式区别以及优缺点?
+集中式版本控制系统需要有中央服务器，我们在使用的时候需要联网，连接这个服务器，如果过中央服务器死机了，那么其他的人就不能工作了，如果是互联网，带宽会影响下载和上传的速度
+分布式，每一台电脑都有一个完成的库，我们可以直接在本地心境工作，我们最后相互传递最新版本就可以了或者发布到github上
+
+
+如何理解github?
+ 是一个网络上的空间（内存），我们可以通过命令，将本地git仓库的内容，推送到github上，供大家来使用下载
+ 
+ 怎么样去创建一个git仓库，并且创建成功有什么标识
+ 在项目之后，右键去点击 git bash, 在命令行中 去 git init,
+ 创建成功之后会在项目中多出一个.git隐藏目录
+ 查看隐藏文件有两种方式
+ 1） 在文件夹中去设置隐藏文件显示
+ 2） 在命令行中 输入  ls -al
+ 
+ 项目分为三部分区域
+ 1，工作区  -- 项目目录
+ 2，暂存区  -- stage
+ 3,git仓库 -- git仓库  
+ 
+ 
+ 项目放入git仓库有两部
+ 
+git add 文件名 -A/*    ---> 将目录保存到暂存区
+
+git commit -m "版本说明"   ----> 将暂存区的内容提交到git仓库，这个时候暂存区里面的内容其实就清空了
+
+
+配置用户名
+git config --global user.name "your name"
+git config --global user.email "your email"
+
+版本回退
+git reset --hard  commitID/ HEAD^（前一个版本） HEAD^^(前两个) HEAD~100(前100个)
+ 
+ 
+版本变动信息  HEAD指针指向变动信息
+git  reflog  
+
+如何查看提交窗台
+git status
+
+查看修改内容?
+git  diff 
+
+
+撤销撤回
+1,文件修改，还没有提交到暂存区，撤回指令？
+git  checkout -- file
+2,提交到暂存区后，撤回
+git  reset HEAD file
+
+远程仓库指的就是github,先去注册github账号，在github上建立一个仓库
+1，建立一个本地git仓库与github一个连接
+git remote add origin + githubURL
+2,上传推送
+git push -u origin master
+
+如何去下载或者clone仓库项目
+git clone + githubURL
+
+
+创建一个分支的指令
+git branch '分支名'
+改变HEAD指针，改变分支方向
+git checkout 分知名字
+
+简写
+git  checkout -b "分知名"  先创建后改变分支
+
+查看分支
+
+git branch
+分支前面带有*号， 表示当前指向的分支
+
+合并分支
+git merge "分支"
+
+
+gulp
+先要下载全局  
+npm install -g gulp
+
+在项目里面去创建一个package.json
+npm init  一路回车
+
+下载本地gulp
+npm install --sage-dev gulp gulp-minify-css  ....
+
+常用的gulp依赖模块五个?
+gulp-minify-css  压缩css
+gulp-less        编译less
+gulp-sass        编译sass
+gulp-uglify      压缩js
+gulp-concat      合并js
+gulp-htmlmin     压缩html
+gulp-connect     自动刷新浏览器
+gulp-rename      修改文件名
+
+gulp.task()  创建任务
+gulp.src()   要执行文件路径
+执行依赖某块()  
+gulp.dest()  另存为路径
+gulp.watch()  监听文件，和执行任务
+.pipe()   管道
+
+
+响应式布局优缺点以及使用场景？
+
+什么自适应页面设置属性的时候有什么特点？
+
+建议看看组件，栅格系统？  
+
+
+
